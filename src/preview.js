@@ -35,7 +35,7 @@ function Preview(props) {
   return (
     <Card className={classes.card} id='preview-card'>
       <CardContent>
-      <Typography className={classes.title} color="textSecondary" gutterBottom>
+      <Typography className={classes.title} color="textSecondary">
           Preview
         </Typography>
         <div dangerouslySetInnerHTML={{__html: safe_content}} />
