@@ -5,6 +5,7 @@ import DOMpurify from 'dompurify';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import hljs from 'highlight.js';
 
 const useStyles = makeStyles({
   card: {
@@ -13,7 +14,10 @@ const useStyles = makeStyles({
 });
 
 marked.setOptions({
-  breaks: true
+  breaks: true,
+  highlight: function(code) {
+    return hljs.highlightAuto(code).value;
+  },
 });
 
 
@@ -27,7 +31,7 @@ function Preview(props) {
       <Typography className={classes.title} color="textSecondary">
           Preview
         </Typography>
-        <div dangerouslySetInnerHTML={{__html: safe_content}} />
+        <div dangerouslySetInnerHTML={{__html: content}} />
       </CardContent>
     </Card>
   )

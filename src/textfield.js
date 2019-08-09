@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import TextareaAutosize from 'react-textarea-autosize';
 
 
 const useStyles = makeStyles({
@@ -20,11 +21,11 @@ function Textfield(props) {
       <Typography className={classes.title} color="textSecondary">
           Markdown
         </Typography>
-          <textarea 
+          <TextareaAutosize
           value={props.markdown} 
           onChange={props.handleChange}
           >
-          </textarea>
+          </TextareaAutosize>
       </CardContent>
     </Card>
     </div>
