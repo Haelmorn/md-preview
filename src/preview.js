@@ -31,7 +31,7 @@ function Preview(props) {
       <Typography className={classes.title} color="textSecondary">
           Preview
         </Typography>
-        <div dangerouslySetInnerHTML={{__html: content}} />
+        <div dangerouslySetInnerHTML={{__html: safe_content}} />
       </CardContent>
     </Card>
   )
