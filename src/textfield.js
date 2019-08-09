@@ -1,39 +1,32 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
 
-const useStyles = makeStyles(theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    backgroundColor: '#e6e6e6',
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-  input: {
-    flex: 1,
+
+const useStyles = makeStyles({
+  card: {
+    minWidth: 275,
   }
-}));
-
+});
 
 function Textfield(props) {
   const classes = useStyles();
   return (
     <div id='input-field'>
-      <TextField fullWidth
-        multiline
-        rows='40'
-        rowsMax="10000000000"
-        id="outlined-name"
-        label="Markdown"
-        className={classes.textField}
-        value={props.markdown}
-        onChange={props.handleChange}
-        margin="normal"
-        variant="outlined"
-      />
+    <Card className={classes.card} id='markdown-card'>
+      <CardContent>
+      <Typography className={classes.title} color="textSecondary">
+          Markdown
+        </Typography>
+          <textarea 
+          value={props.markdown} 
+          onChange={props.handleChange}
+          >
+          </textarea>
+      </CardContent>
+    </Card>
     </div>
   )
 };
