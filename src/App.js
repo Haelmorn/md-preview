@@ -3,21 +3,8 @@ import Preview from './preview';
 import Textfield from './textfield'
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/styles';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-
-
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
+import sample from './sample'
 
 const styles = theme => ({
   root: {
@@ -34,12 +21,22 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      markdown: ""
+      markdown: sample
     }
     this.handleChange = this.handleChange.bind(this);
+    this.resetPlaceholder = this.resetPlaceholder.bind(this);
+    this.setPlaceholder = this.setPlaceholder.bind(this);
   }
-
-
+  resetPlaceholder(event) {
+    if (event.target.value == sample) {
+      this.setState({markdown: ""})
+    }
+  }
+  setPlaceholder(event) {
+    if (event.target.value == ""){
+      this.setState({markdown: sample})
+    }
+  }
   handleChange(event) {
     this.setState({markdown: event.target.value});
   }
@@ -51,7 +48,7 @@ class App extends Component {
         <Navbar />
       <Grid container spacing={3}>
         <Grid item xs={6}>
-          <Textfield handleChange={this.handleChange} markdown={this.state.markdown} />
+          <Textfield handleChange={this.handleChange} markdown={this.state.markdown} resetPlaceholder={this.resetPlaceholder} setPlaceholder={this.setPlaceholder} />
         </Grid>
         <Grid item xs={6}>
           <Preview markdown={this.state.markdown} />

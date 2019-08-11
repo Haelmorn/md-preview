@@ -12,6 +12,7 @@ const useStyles = makeStyles({
   }
 });
 
+
 function Textfield(props) {
   const classes = useStyles();
   return (
@@ -24,6 +25,8 @@ function Textfield(props) {
           <TextareaAutosize
           value={props.markdown} 
           onChange={props.handleChange}
+          onFocus={props.resetPlaceholder}
+          onBlur={props.setPlaceholder}
           >
           </TextareaAutosize>
       </CardContent>
