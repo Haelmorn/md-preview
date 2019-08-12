@@ -50,6 +50,15 @@ pre {
   background-color: #e0ded9
 }
 
+.MuiTypography-h6 {
+  color: #ffffff;
+}
+
+.MuiListItem {
+  padding: 0%;
+  margin: 0;
+}
+
 .hljs {
   display: block;
   overflow-x: auto;
