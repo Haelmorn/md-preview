@@ -119,8 +119,28 @@ function Navbar(props) {
             <ListItem>
               <ListItemText primary={text} />
               <ListItemText>
-                <div dangerouslySetInnerHTML={{__html: marked(text)}} />
+                <div id='list-item' dangerouslySetInnerHTML={{__html: marked(text)}} />
               </ListItemText>
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List dense={true}>
+          {['Emphasis with *asterisks* or _underscores_.',
+          'Strong emphasis with **asterisks** or __underscores__.',
+          'Combined emphasis with **asterisks and _underscores_**.',
+          'Strikethrough uses two tildes. ~~Scratch this.~~'].map((text, index) => (
+            <ListItem>
+              <ListItemText primary={text} secondary={<div id='list-item' dangerouslySetInnerHTML={{__html: marked(text)}} />} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List disablePadding={true}>
+          {['[I\'m an inline-style link](https://www.google.com)',
+          '[I\'m an inline-style link with title](https://www.google.com "Google\'s Homepage")'].map((text, index) => (
+            <ListItem>
+              <ListItemText primary={text} secondary={<div id='list-item' dangerouslySetInnerHTML={{__html: marked(text)}} />} />
             </ListItem>
           ))}
         </List>
