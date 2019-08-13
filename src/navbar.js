@@ -66,9 +66,8 @@ const useStyles = makeStyles(theme => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
   },
-  ListItem: {
-    padding: '0 px',
-    margin: '0 px'
+  li: {
+    margin: theme.spacing(0),
   }
 }));
 
@@ -114,18 +113,16 @@ function Navbar(props) {
           </IconButton>
         </div>
         <Divider />
-        <List dense={true}>
+        <List>
           {['# H1', '## H2', '### H3', '#### H4', '##### H5', '###### H6'].map((text, index) => (
             <ListItem>
               <ListItemText primary={text} />
-              <ListItemText>
-                <div id='list-item' dangerouslySetInnerHTML={{__html: marked(text)}} />
-              </ListItemText>
+              <ListItemText primary={<div id='header-item' dangerouslySetInnerHTML={{__html: marked(text)}} />} />
             </ListItem>
           ))}
         </List>
         <Divider />
-        <List dense={true}>
+        <List>
           {['Emphasis with *asterisks* or _underscores_.',
           'Strong emphasis with **asterisks** or __underscores__.',
           'Combined emphasis with **asterisks and _underscores_**.',
@@ -136,7 +133,7 @@ function Navbar(props) {
           ))}
         </List>
         <Divider />
-        <List disablePadding={true}>
+        <List>
           {['[I\'m an inline-style link](https://www.google.com)',
           '[I\'m an inline-style link with title](https://www.google.com "Google\'s Homepage")'].map((text, index) => (
             <ListItem>
