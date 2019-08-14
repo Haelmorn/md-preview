@@ -108,8 +108,9 @@ function Navbar(props) {
         }}
       >
         <div className={classes.drawerHeader}>
+          <Typography variant='body1' alignItems='center'>Md reference <br />/WIP/</Typography>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
         <Divider />
