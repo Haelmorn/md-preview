@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## MD-preview - a simple markdown previewer
+
+This project was created as a part of FreeCodeCamp front-end library certification.
+
+It allows the user to preview markdown-formatted text in real time.</br>
+It also features an expansible cheatsheet for a quick reference.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -11,6 +18,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+### `npm run deploy`
+
+Deploys the app to GH-pages
 
 ### `npm test`
 
